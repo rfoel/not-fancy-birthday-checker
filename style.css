@@ -1,0 +1,138 @@
+html,
+body,
+#app {
+  height: 100%;
+  font-family: 'Jua', sans-serif;
+  letter-spacing: .2rem;
+}
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+  color: #fff;
+  background: #fc466b;
+  background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
+  background: linear-gradient(to right, #3f5efb, #fc466b);
+  background-size: 300% 300%;
+  animation: Wave 10s ease infinite;
+  box-sizing: border-box;
+  padding: 10px
+}
+
+header {
+  flex: 1 100%;
+  font-size: .6rem;
+  text-align: center;
+  align-self: flex-start;
+}
+
+main {
+  flex: 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+main form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+main form span {
+  font-size: 2.3rem;
+}
+
+main form input {
+  color: #fff;
+  background: transparent;
+  outline: none;
+  font-size: 2.2rem;
+  border: 0;
+  text-align: center;
+}
+
+main form input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+main form input:not(:last-of-type) {
+  width: 50px
+}
+
+main form input:last-of-type {
+  width: 86px
+}
+
+main form p {
+  flex: 1 100%;
+  margin: 10px auto;
+}
+
+main form div {
+  flex: 1 100%;
+}
+
+main button {
+  display: block;
+  background: #fff;
+  color: #3f5efb;
+  padding: 10px 16px;
+  border-radius: 20px;
+  outline: none;
+  border: 0;
+  margin: 10px auto;
+}
+
+main button:hover {
+  background: #eee;
+}
+
+main button:active {
+  background: #ddd;
+}
+
+main h1 {
+  font-size: 6rem;
+  margin: 0;
+}
+
+footer {
+  flex: 1 100%;
+  align-self: flex-end;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Jua', sans-serif;
+}
+
+@keyframes Wave {
+  0% {
+    background-position: 0% 44%;
+  }
+  50% {
+    background-position: 100% 57%;
+  }
+  100% {
+    background-position: 0% 44%;
+  }
+}

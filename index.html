@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<title>Is It My Birthday Yet? 🎂</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/moment@2.22.2/moment.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<header>
+			<h1>
+				Not Fancy Birthday Checker
+			</h1>
+		</header>
+		<main>
+			<div v-if="DOB">
+				<h2>Is it my birthday yet?</h2>
+				<div v-if="daysLeft > 0">
+					<h1>NO</h1>
+					<h2>There {{ daysLeft > 1 ? `are ${daysLeft} days` : `is ${daysLeft} day`}} left for your birthday!</h2>
+				</div>
+				<div v-else>
+					<h1>YES</h1>
+					<h2>Happy Birthday! 🎉🎈🎂</h2>
+				</div>
+				<button type="button" class="button-reset" v-on:click="clearDOB">reset</button>
+			</div>
+			<div v-else>
+				<h2>What is your date of birth?</h2>
+				<form v-on:submit.prevent="setDOB">
+					<input type="tel" maxlength="2" placeholder="DD" v-model="day" />
+					<span>/</span>
+					<input type="tel" maxlength="2" placeholder="MM" v-model="month" />
+					<span>/</span>
+					<input type="tel" maxlength="4" placeholder="YYYY" v-model="year" />
+					<p v-if="error">Invalid date</p>
+					<div>
+						<button type="submit">enter</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<ul>
+				<li>
+					<a href="https://github.com/rfoel/is-it-my-birthday-yet" target="_blank" title="Source Code">source code</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/rfoel" target="_blank" title="Twitter">twitter</a>
+				</li>
+			</ul>
+		</footer>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
